@@ -240,14 +240,20 @@ final class TermuxInstaller {
         sendBootstrapCrashReportNotification(activity, message);
         activity.runOnUiThread(() -> {
             try {
-                new AlertDialog.Builder(activity).setTitle(R.string.bootstrap_error_title).setMessage(R.string.bootstrap_error_body).setNegativeButton(R.string.bootstrap_error_abort, (dialog, which) -> {
-                    dialog.dismiss();
-                    activity.finish();
-                }).setPositiveButton(R.string.bootstrap_error_try_again, (dialog, which) -> {
-                    dialog.dismiss();
-                    FileUtils.deleteFile("termux prefix directory", TERMUX_PREFIX_DIR_PATH, true);
-                    TermuxInstaller.setupBootstrapIfNeeded(activity, whenDone);
-                }).show();
+                AlertDialog alertDialog = new AlertDialog.Builder(activity)
+                        .setTitle(R.string.bootstrap_error_title)
+                        .setMessage(message) // Use the provided message instead of a hardcoded string resource
+                        .setNegativeButton(R.string.bootstrap_error_abort, (dialog, which) -> {
+                            dialog.dismiss();
+                            activity.finish();
+                        })
+                        .setPositiveButton(R.string.bootstrap_error_try_again, (dialog, which) -> {
+                            dialog.dismiss();
+                            FileUtils.deleteFile("termux prefix directory", TERMUX_PREFIX_DIR_PATH, true);
+                            TermuxInstaller.setupBootstrapIfNeeded(activity, whenDone);
+                        })
+                        .create(); // Create the AlertDialog instance
+                alertDialog.show(); // Show the AlertDialog
             } catch (WindowManager.BadTokenException e1) {
                 // Activity already dismissed - ignore.
             }
