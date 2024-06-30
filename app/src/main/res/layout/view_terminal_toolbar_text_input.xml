@@ -33,7 +33,7 @@
         app:boxBackgroundMode="filled"
         app:boxBackgroundColor="@null"
         app:startIconDrawable="@drawable/ic_console_line"
-        app:startIconTint="#98cbff"
+        app:startIconTint="#4e4e4e"
         app:startIconContentDescription="Ingresar comando"
         app:startIconMinSize="38dp"
         app:endIconMode="clear_text"
@@ -41,7 +41,10 @@
         app:counterEnabled="true"
         app:counterMaxLength="666"
         app:helperTextEnabled="true"
-        app:helperText="JulioCj7">
+        app:helperText="JulioCj7"
+        android:textColorHint="#ff0000"
+        app:boxStrokeColor="#00ff00"
+        >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/terminal_toolbar_text_input"
             android:singleLine="true"
