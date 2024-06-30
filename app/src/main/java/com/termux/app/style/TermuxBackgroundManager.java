@@ -4,19 +4,19 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.Color;  //..SimplyTheBest (for transparent bg on ExtraKeys)
+//import android.graphics.Color;  //..SimplyTheBest (for transparent bg on ExtraKeys)
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;  //..SimplyTheBest (for transparent bg on ExtraKeys)
+//import android.util.Log;  //..SimplyTheBest (for transparent bg on ExtraKeys)
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.viewpager.widget.ViewPager;  //..SimplyTheBest (for transparent bg on ExtraKeys)
+//import androidx.viewpager.widget.ViewPager;  //..SimplyTheBest (for transparent bg on ExtraKeys)
 
 import com.termux.R;
 import com.termux.app.TermuxActivity;
@@ -27,9 +27,9 @@ import com.termux.shared.file.FileUtils;
 import com.termux.shared.image.ImageUtils;
 import com.termux.shared.logger.Logger;
 import com.termux.shared.termux.TermuxConstants;
-import com.termux.shared.termux.extrakeys.ExtraKeysView;  //..SimplyTheBest (for transparent bg on ExtraKeys)
+//import com.termux.shared.termux.extrakeys.ExtraKeysView;  //..SimplyTheBest (for transparent bg on ExtraKeys)
 import com.termux.shared.termux.settings.preferences.TermuxAppSharedPreferences;
-import com.termux.shared.theme.ThemeUtils;  //..SimplyTheBest (for transparent bg on ExtraKeys)
+//import com.termux.shared.theme.ThemeUtils;  //..SimplyTheBest (for transparent bg on ExtraKeys)
 import com.termux.shared.view.ViewUtils;
 import com.termux.terminal.TerminalSession;
 import com.termux.terminal.TextStyle;
@@ -270,7 +270,7 @@ public class TermuxBackgroundManager {
      * Set background of the ExtraKey toolbar and buttons.
      * Must be called when background preference is changed.
      */
-    public void updateToolbarBackground() {
+    /*public void updateToolbarBackground() {
         ViewPager viewPager = mActivity.getTerminalToolbarViewPager();
         ExtraKeysView extraKeysView = mActivity.getExtraKeysView();
 
@@ -287,7 +287,7 @@ public class TermuxBackgroundManager {
             //extraKeysView.setButtonBackgroundColor(ThemeUtils.getSystemAttrColor(mActivity, ExtraKeysView.ATTR_BUTTON_BACKGROUND_COLOR, ExtraKeysView.DEFAULT_BUTTON_BACKGROUND_COLOR));
             extraKeysView.setButtonBackgroundColor(Color.BLACK);
         }
-    }
+    }*/
     // •○●
 
     /**
