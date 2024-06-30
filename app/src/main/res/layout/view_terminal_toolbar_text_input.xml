@@ -43,8 +43,7 @@
         app:helperTextEnabled="true"
         app:helperText="JulioCj7"
         android:textColorHint="#ff0000"
-        app:boxStrokeColor="#00ff00"
-        >
+        app:boxStrokeColor="#00ff00">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/terminal_toolbar_text_input"
             android:singleLine="true"
