@@ -42,7 +42,7 @@
     <string name="msg_enabling_terminal_toolbar">Habilitando la barra de herramientas</string>
     <string name="msg_disabling_terminal_toolbar">Desactivando la barra de herramientas</string>
     <!-- Terminal Extra Keys -->
-    <string name="extra_keys_command_hint">Introducir el comando…</string>
+    <string name="extra_keys_command_hint">Comando</string>
     <!-- Terminal Popup -->
     <string name="action_select_url">Seleccionar URL</string>
     <string name="title_select_url_dialog">Hacer clic en URL para copiar o presionar prolongadamente para abrir</string>
