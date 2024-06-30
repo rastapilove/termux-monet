@@ -79,21 +79,6 @@
                     android:dividerHeight="0dp"
                     android:descendantFocusability="blocksDescendants">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageButton
-                            android:id="@+id/settings_button"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_settings"
-                            android:background="@null"
-                            android:contentDescription="@string/action_open_settings"
-                            app:tint="@color/menu_accent" />
-                    </LinearLayout>
-
                     <ListView
                         android:id="@+id/terminal_sessions_list"
                         android:layout_width="match_parent"
@@ -110,27 +95,36 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.google.android.material.button.MaterialButton
+                        <ImageView
                             android:id="@+id/toggle_keyboard_button"
-                            style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="48dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center_horizontal"
-                            android:text="@string/action_toggle_soft_keyboard"
-                            android:textAllCaps="true"
-                            android:textColor="@color/menu_accent" />
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/baseline_keyboard_alt_24"
+                            android:background="@null"
+                            app:tint="@color/menu_accent"
+                            android:contentDescription="@string/action_toggle_soft_keyboard"/>
 
-                        <com.google.android.material.button.MaterialButton
+                        <ImageView
                             android:id="@+id/new_session_button"
-                            style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="48dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center_horizontal"
-                            android:text="@string/action_new_session"
-                            android:textAllCaps="true"
-                            android:textColor="@color/menu_accent" />
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_new_session"
+                            android:background="@null"
+                            app:tint="#98cbff"
+                            android:contentDescription="@string/action_new_session"/>
+
+                        <ImageView
+                            android:id="@+id/settings_button"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_settings"
+                            android:background="@null"
+                            app:tint="@color/menu_accent"
+                            android:contentDescription="@string/action_open_settings"/>
+
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
