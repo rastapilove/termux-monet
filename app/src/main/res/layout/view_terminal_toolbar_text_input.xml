@@ -28,7 +28,6 @@
         android:textCursorDrawable="@null"
         android:paddingBottom="0dp"
         android:hint="@string/extra_keys_command_hint"
-        android:textColorHint="@color/hint_accent"
         tools:ignore="LabelFor"
         app:boxBackgroundMode="filled"
         app:boxBackgroundColor="@null"
