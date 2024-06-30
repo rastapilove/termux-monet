@@ -599,7 +599,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
     private void setSettingsButtonView() {
-        ImageButton settingsButton = findViewById(R.id.settings_button);
+        View settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(v -> {
             ActivityUtils.startActivity(this, new Intent(this, SettingsActivity.class));
         });
