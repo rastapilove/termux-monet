@@ -144,10 +144,9 @@
             android:layout_width="match_parent"
             android:layout_height="37.5dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/background_accent"/>
+            android:background="#60000000"/>
             <!--
-            android:background="#60000000"
-            android:alpha="0.5"/>
+            android:background="@color/background_accent"/>
             -->
 
         <androidx.viewpager.widget.ViewPager
