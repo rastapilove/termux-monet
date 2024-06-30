@@ -57,7 +57,7 @@ public class TerminalToolbarViewPager {
                     FullScreenWorkAround.apply(mActivity);
                 }
                 // Update toolbar background corresponding to prefs
-                mActivity.getmTermuxBackgroundManager().updateToolbarBackground();  //..SimplyTheBest (for transparent bg on ExtraKeys)
+                //mActivity.getmTermuxBackgroundManager().updateToolbarBackground();  //..SimplyTheBest (for transparent bg on ExtraKeys)
             } else {
                 layout = inflater.inflate(R.layout.view_terminal_toolbar_text_input, collection, false);
                 // •○● @SimplyTheBest: (for back button on InputText)
