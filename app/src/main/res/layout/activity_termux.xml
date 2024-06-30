@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_above="@+id/terminal_toolbar_view_pager">~
+            android:layout_above="@+id/terminal_toolbar_view_pager">
 
             <View
                 android:id="@+id/terminal_monetbackground"
@@ -134,7 +134,7 @@
         <com.github.mmin18.widget.RealtimeBlurView
             android:id="@+id/extrakeys_backgroundblur"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="37.5dp"
             android:layout_alignParentBottom="true"
             app:realtimeBlurRadius="15dp"
             app:realtimeOverlayColor="@android:color/transparent" />
@@ -142,7 +142,7 @@
         <View
             android:id="@+id/extrakeys_background"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="37.5dp"
             android:layout_alignParentBottom="true"
             android:background="#80000000"
             android:alpha="0.5"/>
