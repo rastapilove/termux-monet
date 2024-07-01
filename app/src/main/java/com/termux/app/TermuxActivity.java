@@ -332,13 +332,15 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         Properties properties = new Properties();
         try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
             properties.load(reader);
-            return properties.getProperty("extra-keys-background").trim();
+            //return properties.getProperty("extra-keys-background").trim();
+            String color = properties.getProperty("extra-keys-background", "#600000FF").trim();
+            return color;
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            //return null;
+            return "#600000FF";
         }
-    }
-
+   }
 
 
     
