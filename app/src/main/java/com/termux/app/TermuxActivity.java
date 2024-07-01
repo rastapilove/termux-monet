@@ -328,17 +328,19 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
 
 
-    
-   public String readColorFromPropertiesFile(String filePath) {
+   private String readColorFromPropertiesFile(String filePath) {
         Properties properties = new Properties();
         try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
             properties.load(reader);
-            return properties.getProperty("color_fondo");
+            return properties.getProperty("extra-keys-background").trim();
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
+
+
+
     
     @Override
     public void onStart() {
@@ -346,15 +348,11 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         Logger.logDebug(LOG_TAG, "onStart");
 
 
-        
-        // Ruta del archivo
         String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
         String colorHex = readColorFromPropertiesFile(filePath);
-
         int color = Color.parseColor(colorHex);
 
 
-        
         if (mIsInvalidState)
             return;
         mIsVisible = true;
