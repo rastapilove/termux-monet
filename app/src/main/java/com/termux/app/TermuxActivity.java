@@ -366,13 +366,6 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     public void onStart() {
         super.onStart();
         Logger.logDebug(LOG_TAG, "onStart");
-
-        // •○● @SimplyTheBest: Change background color in extra keyboard
-        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
-        String colorHex = readColorFromPropertiesFile(filePath);
-        int color = Color.parseColor(colorHex);
-        // •○●
-
         if (mIsInvalidState)
             return;
         mIsVisible = true;
@@ -406,8 +399,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             extraKeysBackgroundBlur.setVisibility(View.GONE);
             extraKeysBackground.setAlpha(1.0f);
         }
-        extraKeysBackground.setBackgroundColor(color);  // •○● @SimplyTheBest (for change background color in extra keyboard)
-
+        // •○● @SimplyTheBest: Change background color in extra keyboard
+        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
+        String colorHex = readColorFromPropertiesFile(filePath);
+        int color = Color.parseColor(colorHex);
+        extraKeysBackground.setBackgroundColor(color);
+        // •○●
         registerTermuxActivityBroadcastReceiver();
     }
 
