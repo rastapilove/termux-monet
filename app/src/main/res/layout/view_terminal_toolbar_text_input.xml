@@ -40,11 +40,10 @@
         app:endIconTint="#8e8e8e"
         app:counterEnabled="true"
         app:counterMaxLength="666"
-        app:counterTextColor="#4e4e4e"
-        app:counterOverflowTextColor="#ff0000"
+        app:counterTextTextColor="#4e4e4e"
         app:helperTextEnabled="true"
         app:helperText="JulioCj7"
-        app:helperTextColor="#4e4e4e"
+        app:helperTextTextColor="#4e4e4e"
         app:boxStrokeColor="#98cbff">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/terminal_toolbar_text_input"
