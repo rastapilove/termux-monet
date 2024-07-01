@@ -80,7 +80,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 import java.util.Arrays;
 
-
+// •○● @SimplyTheBest: (for change background color of ExtraKeys in termux.properties)
 import android.graphics.Color;
 import android.widget.LinearLayout;
 import java.io.BufferedReader;
@@ -88,6 +88,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+// •○●
 
 /**
  * A terminal emulator activity.
@@ -326,34 +327,31 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         }
     }
 
+    // •○● @SimplyTheBest: Change background color in extra keyboard
+    private String readColorFromPropertiesFile(String filePath) {
+         Properties properties = new Properties();
+         try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
+             properties.load(reader);
+             //return properties.getProperty("extra-keys-background").trim();
+             String color = properties.getProperty("extra-keys-background", "#600000FF").trim();
+             return color;
+         } catch (IOException e) {
+             e.printStackTrace();
+             return "#600000FF";
+         }
+    }
+    // •○●
 
-
-   private String readColorFromPropertiesFile(String filePath) {
-        Properties properties = new Properties();
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
-            properties.load(reader);
-            //return properties.getProperty("extra-keys-background").trim();
-            String color = properties.getProperty("extra-keys-background", "#600000FF").trim();
-            return color;
-        } catch (IOException e) {
-            e.printStackTrace();
-            //return null;
-            return "#600000FF";
-        }
-   }
-
-
-    
     @Override
     public void onStart() {
         super.onStart();
         Logger.logDebug(LOG_TAG, "onStart");
 
-
+        // •○● @SimplyTheBest: Change background color in extra keyboard
         String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
         String colorHex = readColorFromPropertiesFile(filePath);
         int color = Color.parseColor(colorHex);
-
+        // •○●
 
         if (mIsInvalidState)
             return;
@@ -384,12 +382,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         if ((mPreferences.isExtraKeysBlurEnabled()) && (isToolbarHidden == false)) {
             extraKeysBackgroundBlur.setVisibility(View.VISIBLE);
             extraKeysBackground.setAlpha(0.80f);
-            extraKeysBackground.setBackgroundColor(color);
         } else {
             extraKeysBackgroundBlur.setVisibility(View.GONE);
             extraKeysBackground.setAlpha(1.0f);
-            extraKeysBackground.setBackgroundColor(color);
         }
+        extraKeysBackground.setBackgroundColor(color);  // •○● @SimplyTheBest (for change background color in extra keyboard)
+
         registerTermuxActivityBroadcastReceiver();
     }
 
