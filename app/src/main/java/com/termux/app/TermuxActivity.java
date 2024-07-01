@@ -328,17 +328,37 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
     // •○● @SimplyTheBest: Change background color in extra keyboard
-    private String readColorFromPropertiesFile(String filePath) {
+    /*private String readColorFromPropertiesFile(String filePath) {
          Properties properties = new Properties();
          try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
              properties.load(reader);
-             //return properties.getProperty("extra-keys-background").trim();
              String color = properties.getProperty("extra-keys-background", "#600000FF").trim();
              return color;
          } catch (IOException e) {
              e.printStackTrace();
              return "#600000FF";
          }
+    }*/
+
+    private String readColorFromPropertiesFile(String filePath) {
+        Properties properties = new Properties();
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
+            properties.load(reader);
+            String color = properties.getProperty("extra-keys-background");
+            if (color == null) {
+                // Obtener el color del recurso si la propiedad no existe
+                int colorRes = getResources().getColor(R.color.background_accent);
+                color = String.format("#%06X", (0xFFFFFF & colorRes));
+            } else {
+                color = color.trim();
+            }
+            return color;
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Retornar el color del recurso en caso de error
+            int colorRes = getResources().getColor(R.color.background_accent);
+            return String.format("#%06X", (0xFFFFFF & colorRes));
+        }
     }
     // •○●
 
