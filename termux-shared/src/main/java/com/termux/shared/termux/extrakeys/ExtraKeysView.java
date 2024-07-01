@@ -311,16 +311,16 @@ public final class ExtraKeysView extends GridLayout {
 			int position = Arrays.asList(keys).indexOf(key);
 			switch(position) {
 				case 0:
-                    DEFAULT_BUTTON_TEXT_COLOR = color;
+                    DEFAULT_BUTTON_TEXT_COLOR = caught ? R.attr.extraKeysButtonTextColor : color;
 					break;
 				case 1:
-                    DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = caught ? 0xFFFF0000 : color;
+                    DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = caught ? R.attr.extraKeysButtonActiveTextColor : color;
 					break;
 				case 2:
-                    DEFAULT_BUTTON_BACKGROUND_COLOR = caught ? 0x00000000 : color;
+                    DEFAULT_BUTTON_BACKGROUND_COLOR = caught ? R.attr.extraKeysButtonBackgroundColor : color;
 					break;
                 case 3:
-                    DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = caught ? 0xFF585858 : color;
+                    DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = caught ? R.attr.extraKeysButtonActiveBackgroundColor : color;
                     break;
 		    }
 	    }
