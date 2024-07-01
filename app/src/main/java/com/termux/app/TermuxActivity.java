@@ -80,6 +80,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 import java.util.Arrays;
 
+
+import android.graphics.Color;
+import android.widget.LinearLayout;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  * A terminal emulator activity.
  * <p/>
@@ -320,6 +329,26 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     @Override
     public void onStart() {
         super.onStart();
+
+
+        
+        // Ruta del archivo
+        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
+        String colorHex = readColorFromPropertiesFile(filePath);
+
+        int color = Color.parseColor(colorHex);
+
+   private String readColorFromPropertiesFile(String filePath) {
+        Properties properties = new Properties();
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
+            properties.load(reader);
+            return properties.getProperty("color_fondo");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+        
         Logger.logDebug(LOG_TAG, "onStart");
         if (mIsInvalidState)
             return;
@@ -350,9 +379,11 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         if ((mPreferences.isExtraKeysBlurEnabled()) && (isToolbarHidden == false)) {
             extraKeysBackgroundBlur.setVisibility(View.VISIBLE);
             extraKeysBackground.setAlpha(0.80f);
+            extraKeysBackground.setBackgroundColor(color);
         } else {
             extraKeysBackgroundBlur.setVisibility(View.GONE);
             extraKeysBackground.setAlpha(1.0f);
+            extraKeysBackground.setBackgroundColor(color);
         }
         registerTermuxActivityBroadcastReceiver();
     }
