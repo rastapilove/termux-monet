@@ -30,6 +30,7 @@
         android:paddingBottom="0dp"
         android:hint="@string/extra_keys_command_hint"
         tools:ignore="LabelFor"
+        app:hintTextColor="#4e4e4e"
         app:boxBackgroundMode="filled"
         app:boxBackgroundColor="@null"
         app:startIconDrawable="@drawable/ic_console_line"
@@ -37,14 +38,13 @@
         app:startIconContentDescription="Ingresar comando"
         app:startIconMinSize="38dp"
         app:endIconMode="clear_text"
-        app:endIconTint="#8e8e8e"
+        app:endIconTint="#4e4e4e"
         app:counterEnabled="true"
         app:counterMaxLength="666"
         app:helperTextEnabled="true"
         app:helperText="JulioCj7"
         app:helperTextTextColor="#4e4e4e"
-        app:boxStrokeColor="#98cbff"
-        app:hintTextColor="#ff0000">
+        app:boxStrokeColor="#98cbff">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/terminal_toolbar_text_input"
             android:singleLine="true"
