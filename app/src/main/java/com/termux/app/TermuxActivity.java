@@ -329,6 +329,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     @Override
     public void onStart() {
         super.onStart();
+        Logger.logDebug(LOG_TAG, "onStart");
 
 
         
@@ -338,7 +339,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
         int color = Color.parseColor(colorHex);
 
-   private String readColorFromPropertiesFile(String filePath) {
+   public String readColorFromPropertiesFile(String filePath) {
         Properties properties = new Properties();
         try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
             properties.load(reader);
@@ -349,7 +350,6 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         }
     }
         
-        Logger.logDebug(LOG_TAG, "onStart");
         if (mIsInvalidState)
             return;
         mIsVisible = true;
