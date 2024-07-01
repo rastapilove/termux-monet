@@ -41,7 +41,7 @@
         app:counterEnabled="true"
         app:counterMaxLength="666"
         app:counterTextColor="#4e4e4e"
-        app:counterOverflowTextColor="#4e4e4e"
+        app:counterOverflowTextColor="#ff0000"
         app:helperTextEnabled="true"
         app:helperText="JulioCj7"
         app:helperTextColor="#4e4e4e"
