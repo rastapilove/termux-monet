@@ -281,6 +281,17 @@ public class TermuxTerminalViewClient extends TermuxTerminalViewClientBase {
             mActivity.finishActivityIfNotFinishing();
             return true;
         }
+        // Implement back key to toggle soft keyboard
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // When back key toggle soft keyboard is enabled
+            if (!mActivity.getProperties().isBackKeyTheEscapeKey() && mActivity.getPreferences().isBackKeyToggleSoftKeyboard()) {
+                // When soft keyboard can be shown
+                if (!KeyboardUtils.isHardKeyboardConnected(mActivity) || KeyboardUtils.isHardKeyboardConnected(mActivity) && !mActivity.getPreferences().isSoftKeyboardEnabledOnlyIfNoHardware()) {
+                    KeyboardUtils.toggleSoftKeyboard(mActivity);
+                    return true;
+                }
+            }
+        }
         return handleVirtualKeys(keyCode, e, false);
     }
 
