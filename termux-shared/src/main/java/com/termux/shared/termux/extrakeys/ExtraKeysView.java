@@ -291,7 +291,6 @@ public final class ExtraKeysView extends GridLayout {
      * or fallback values, if not present.
      */
     public void setDefaultButtonColor() {
-        //DEFAULT_BUTTON_TEXT_COLOR = 0;
         ATTR_BUTTON_TEXT_COLOR = 0;
         ATTR_BUTTON_ACTIVE_TEXT_COLOR = 0;
         ATTR_BUTTON_BACKGROUND_COLOR = 0;
