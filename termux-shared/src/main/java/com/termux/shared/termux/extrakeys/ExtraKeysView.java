@@ -140,26 +140,26 @@ public final class ExtraKeysView extends GridLayout {
     /**
      * Defines the default fallback value for {@link #mButtonTextColor} if {@link #ATTR_BUTTON_TEXT_COLOR} is undefined.
      */
-    public static final int DEFAULT_BUTTON_TEXT_COLOR = 0xFFFFFFFF;
-    //public static int DEFAULT_BUTTON_TEXT_COLOR;  //..SimplyTheBest
+    //public static final int DEFAULT_BUTTON_TEXT_COLOR = 0xFFFFFFFF;
+    public static int DEFAULT_BUTTON_TEXT_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default fallback value for {@link #mButtonActiveTextColor} if {@link #ATTR_BUTTON_ACTIVE_TEXT_COLOR} is undefined.
      */
-    public static final int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = 0xFF80DEEA;
-    //public static int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR;  //..SimplyTheBest
+    //public static final int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = 0xFF80DEEA;
+    public static int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default fallback value for {@link #mButtonBackgroundColor} if {@link #ATTR_BUTTON_BACKGROUND_COLOR} is undefined.
      */
-    public static final int DEFAULT_BUTTON_BACKGROUND_COLOR = 0x00000000;
-    //public static int DEFAULT_BUTTON_BACKGROUND_COLOR;  //..SimplyTheBest
+    //public static final int DEFAULT_BUTTON_BACKGROUND_COLOR = 0x00000000;
+    public static int DEFAULT_BUTTON_BACKGROUND_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default fallback value for {@link #mButtonActiveBackgroundColor} if {@link #ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR} is undefined.
      */
-    public static final int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = 0xFF7F7F7F;
-    //public static int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR;  //..SimplyTheBest
+    //public static final int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = 0xFF7F7F7F;
+    public static int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the minimum allowed duration in milliseconds for {@link #mLongPressTimeout}.
