@@ -117,49 +117,49 @@ public final class ExtraKeysView extends GridLayout {
      * Defines the default value for {@link #mButtonTextColor} defined by current theme.
      */
     //public static final int ATTR_BUTTON_TEXT_COLOR = R.attr.extraKeysButtonTextColor;
-    public static final int ATTR_BUTTON_TEXT_COLOR = 0xFFFFFFFF;  //..SimplyTheBest
+    public static int ATTR_BUTTON_TEXT_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default value for {@link #mButtonActiveTextColor} defined by current theme.
      */
     //public static final int ATTR_BUTTON_ACTIVE_TEXT_COLOR = R.attr.extraKeysButtonActiveTextColor;
-    public static final int ATTR_BUTTON_ACTIVE_TEXT_COLOR = 0xFFFF0000;  //..SimplyTheBest
+    public static int ATTR_BUTTON_ACTIVE_TEXT_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default value for {@link #mButtonBackgroundColor} defined by current theme.
      */
     //public static final int ATTR_BUTTON_BACKGROUND_COLOR = R.attr.extraKeysButtonBackgroundColor;
-    public static final int ATTR_BUTTON_BACKGROUND_COLOR = 0xFF000000;  //..SimplyTheBest
+    public static int ATTR_BUTTON_BACKGROUND_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default value for {@link #mButtonActiveBackgroundColor} defined by current theme.
      */
     //public static final int ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR = R.attr.extraKeysButtonActiveBackgroundColor;
-    public static final int ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR = 0xFF7F7F7F;  //..SimplyTheBest
+    public static int ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default fallback value for {@link #mButtonTextColor} if {@link #ATTR_BUTTON_TEXT_COLOR} is undefined.
      */
-    //public static final int DEFAULT_BUTTON_TEXT_COLOR = 0xFFFFFFFF;
-    public static int DEFAULT_BUTTON_TEXT_COLOR;  //..SimplyTheBest
+    public static final int DEFAULT_BUTTON_TEXT_COLOR = 0xFFFFFFFF;
+    //public static int DEFAULT_BUTTON_TEXT_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default fallback value for {@link #mButtonActiveTextColor} if {@link #ATTR_BUTTON_ACTIVE_TEXT_COLOR} is undefined.
      */
-    //public static final int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = 0xFF80DEEA;
-    public static int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR;  //..SimplyTheBest
+    public static final int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = 0xFF80DEEA;
+    //public static int DEFAULT_BUTTON_ACTIVE_TEXT_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default fallback value for {@link #mButtonBackgroundColor} if {@link #ATTR_BUTTON_BACKGROUND_COLOR} is undefined.
      */
-    //public static final int DEFAULT_BUTTON_BACKGROUND_COLOR = 0x00000000;
-    public static int DEFAULT_BUTTON_BACKGROUND_COLOR;  //..SimplyTheBest
+    public static final int DEFAULT_BUTTON_BACKGROUND_COLOR = 0x00000000;
+    //public static int DEFAULT_BUTTON_BACKGROUND_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the default fallback value for {@link #mButtonActiveBackgroundColor} if {@link #ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR} is undefined.
      */
-    //public static final int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = 0xFF7F7F7F;
-    public static int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR;  //..SimplyTheBest
+    public static final int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = 0xFF7F7F7F;
+    //public static int DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR;  //..SimplyTheBest
 
     /**
      * Defines the minimum allowed duration in milliseconds for {@link #mLongPressTimeout}.
@@ -311,16 +311,16 @@ public final class ExtraKeysView extends GridLayout {
 			int position = Arrays.asList(keys).indexOf(key);
 			switch(position) {
 				case 0:
-                    DEFAULT_BUTTON_TEXT_COLOR = caught ? R.attr.extraKeysButtonTextColor : color;
+                    ATTR_BUTTON_TEXT_COLOR = caught ? R.attr.extraKeysButtonTextColor : color;
 					break;
 				case 1:
-                    DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = caught ? R.attr.extraKeysButtonActiveTextColor : color;
+                    ATTR_BUTTON_ACTIVE_TEXT_COLOR = caught ? R.attr.extraKeysButtonActiveTextColor : color;
 					break;
 				case 2:
-                    DEFAULT_BUTTON_BACKGROUND_COLOR = caught ? R.attr.extraKeysButtonBackgroundColor : color;
+                    ATTR_BUTTON_BACKGROUND_COLOR = caught ? R.attr.extraKeysButtonBackgroundColor : color;
 					break;
                 case 3:
-                    DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = caught ? R.attr.extraKeysButtonActiveBackgroundColor : color;
+                    ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR = caught ? R.attr.extraKeysButtonActiveBackgroundColor : color;
                     break;
 		    }
 	    }
