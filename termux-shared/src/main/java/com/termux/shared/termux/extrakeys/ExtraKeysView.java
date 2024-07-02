@@ -291,8 +291,8 @@ public final class ExtraKeysView extends GridLayout {
      * or fallback values, if not present.
      */
     public void setDefaultButtonColor() {
-        System.clearProperty("DEFAULT_BUTTON_TEXT_COLOR");
-        System.clearProperty("ATTR_BUTTON_TEXT_COLOR");
+        DEFAULT_BUTTON_TEXT_COLOR = null;
+        ATTR_BUTTON_TEXT_COLOR = null;
 		InputStream fileInputStream;
 		boolean caught = false;
 		int color = Color.WHITE;
