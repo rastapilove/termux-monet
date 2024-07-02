@@ -291,8 +291,11 @@ public final class ExtraKeysView extends GridLayout {
      * or fallback values, if not present.
      */
     public void setDefaultButtonColor() {
-        DEFAULT_BUTTON_TEXT_COLOR = 0;
+        //DEFAULT_BUTTON_TEXT_COLOR = 0;
         ATTR_BUTTON_TEXT_COLOR = 0;
+        ATTR_BUTTON_ACTIVE_TEXT_COLOR = 0;
+        ATTR_BUTTON_BACKGROUND_COLOR = 0;
+        ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR = 0;
 		InputStream fileInputStream;
 		boolean caught = false;
 		int color = Color.WHITE;
@@ -325,7 +328,6 @@ public final class ExtraKeysView extends GridLayout {
                     DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = caught ? 0xFF585858 : color;
                     break;               
 		    }*/
-
  			int position = Arrays.asList(keys).indexOf(key);
 			switch(position) {
      			case 0:
