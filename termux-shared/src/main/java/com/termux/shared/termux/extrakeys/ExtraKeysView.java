@@ -292,11 +292,11 @@ public final class ExtraKeysView extends GridLayout {
      */
     public void setDefaultButtonColor() {
 		InputStream fileInputStream;
-		//boolean caught = false;
+		boolean caught = false;
 		int color = Color.WHITE;
 		String[] keys = new String [] {"button-text-color", "button-active-text-color", "button-background-color", "button-active-background-color"};
 		for ( String key : keys ) {
-            //caught = false;
+            caught = false;
 			try	{
 				String path = "/data/data/com.termux/files/home/.termux/termux.properties";
 				File file = new File(path);
@@ -305,29 +305,8 @@ public final class ExtraKeysView extends GridLayout {
 				properties.load(fileInputStream);
 				fileInputStream.close();
 				color = Color.parseColor(properties.getProperty(key));
-
-			    int position = Arrays.asList(keys).indexOf(key);
-			    switch(position) {
-     			    case 0:
-                        DEFAULT_BUTTON_TEXT_COLOR = color;
-					    break;
-				    case 1:
-                        DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = color;
-					    break;
-				    case 2:
-                        DEFAULT_BUTTON_BACKGROUND_COLOR = color;
-					    break;
-                    case 3:
-                        DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = color;
-                        break;               
-		        }
-                
 			} catch (Throwable th) {
-				//caught = true;
-                ATTR_BUTTON_TEXT_COLOR = R.attr.extraKeysButtonTextColor;
-				ATTR_BUTTON_ACTIVE_TEXT_COLOR = R.attr.extraKeysButtonActiveTextColor;
-                ATTR_BUTTON_BACKGROUND_COLOR = R.attr.extraKeysButtonBackgroundColor;
-	            ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR = R.attr.extraKeysButtonActiveBackgroundColor;
+				caught = true;
 			}
 			/*int position = Arrays.asList(keys).indexOf(key);
 			switch(position) {
@@ -344,6 +323,38 @@ public final class ExtraKeysView extends GridLayout {
                     DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = caught ? 0xFF585858 : color;
                     break;               
 		    }*/
+
+ 			int position = Arrays.asList(keys).indexOf(key);
+			switch(position) {
+     			case 0:
+                    if (caught) {
+                        ATTR_BUTTON_TEXT_COLOR = R.attr.extraKeysButtonTextColor;
+                    } else {
+                        DEFAULT_BUTTON_TEXT_COLOR = color;
+                    }
+					break;
+				case 1:
+                    if (caught) {
+                        ATTR_BUTTON_ACTIVE_TEXT_COLOR = R.attr.extraKeysButtonActiveTextColor;
+                    } else {
+                        DEFAULT_BUTTON_ACTIVE_TEXT_COLOR = color;
+                    }
+					break;
+				case 2:
+                    if (caught) {
+                        ATTR_BUTTON_BACKGROUND_COLOR = R.attr.extraKeysButtonBackgroundColor;
+                    } else {
+                        DEFAULT_BUTTON_BACKGROUND_COLOR = color;
+                    }
+					break;
+                case 3:
+                    if (caught) {
+                        ATTR_BUTTON_ACTIVE_BACKGROUND_COLOR = R.attr.extraKeysButtonActiveBackgroundColor;
+                    } else {
+                        DEFAULT_BUTTON_ACTIVE_BACKGROUND_COLOR = color;
+                    }
+                    break;               
+		    }
 	    }
     }
     // •○●
