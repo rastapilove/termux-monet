@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/border_shape">
 
     <RelativeLayout
         android:id="@+id/activity_termux_root_relative_layout"
@@ -168,6 +169,6 @@
         android:id="@+id/activity_termux_bottom_space_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/border_shape" />
+        android:background="@android:color/transparent" />
 
 </com.termux.app.terminal.TermuxActivityRootView>
