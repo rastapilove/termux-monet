@@ -64,8 +64,12 @@
                 <View
                     android:id="@+id/sessions_background"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="match_parent"/>
+                    <!--
+                    Esta propiedad se obtiene desde termux.properties
+                    android:background="#60000000"/>
                     android:background="@color/background_accent"/>
+                    -->
 
                 <LinearLayout
                     android:id="@+id/left_drawer"
