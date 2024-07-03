@@ -89,6 +89,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 // •○●
+import java.util.HashMap;
+import java.util.Map;
+// •○●
 
 /**
  * A terminal emulator activity.
@@ -340,7 +343,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
          }
     }*/
 
-    private String readColorFromPropertiesFile(String filePath) {
+    /*private String readColorFromPropertiesFile(String filePath) {
         Properties properties = new Properties();
         try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
             properties.load(reader);
@@ -359,7 +362,41 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             int colorRes = getResources().getColor(R.color.background_accent);
             return String.format("#%06X", (0xFFFFFF & colorRes));
         }
+    }*/
+
+private Map<String, String> readColorsFromPropertiesFile(String filePath) {
+    Properties properties = new Properties();
+    Map<String, String> colors = new HashMap<>();
+    try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
+        properties.load(reader);
+
+        String extraKeysColor = properties.getProperty("extra-keys-background");
+        if (extraKeysColor == null) {
+            int colorRes = getResources().getColor(R.color.background_accent);
+            extraKeysColor = String.format("#%06X", (0xFFFFFF & colorRes));
+        } else {
+            extraKeysColor = extraKeysColor.trim();
+        }
+        colors.put("extra-keys-background", extraKeysColor);
+
+        String sessionsColor = properties.getProperty("sessions-background");
+        if (sessionsColor == null) {
+            int colorRes = getResources().getColor(R.color.background_accent);
+            sessionsColor = String.format("#%06X", (0xFFFFFF & colorRes));
+        } else {
+            sessionsColor = sessionsColor.trim();
+        }
+        colors.put("sessions-background", sessionsColor);
+
+    } catch (IOException e) {
+        e.printStackTrace();
+        int colorRes = getResources().getColor(R.color.background_accent);
+        String defaultColor = String.format("#%06X", (0xFFFFFF & colorRes));
+        colors.put("extra-keys-background", defaultColor);
+        colors.put("sessions-background", defaultColor);
     }
+    return colors;
+}
     // •○●
 
     @Override
@@ -400,10 +437,20 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             extraKeysBackground.setAlpha(1.0f);
         }
         // •○● @SimplyTheBest: Change background color in extra keyboard
-        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
+        /*String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
         String colorHex = readColorFromPropertiesFile(filePath);
         int color = Color.parseColor(colorHex);
-        extraKeysBackground.setBackgroundColor(color);
+        extraKeysBackground.setBackgroundColor(color);*/
+
+        // Supongamos que el archivo de propiedades se encuentra en "path/to/properties/file.properties"
+        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
+        // Llama a la función para leer los colores del archivo de propiedades
+        Map<String, String> colors = readColorsFromPropertiesFile(filePath);
+        // Accede a los valores de cada propiedad
+        String extraKeysColor = colors.get("extra-keys-background");
+        String sessionsColor = colors.get("sessions-background");
+        sessionsBackground.setBackgroundColor(sessionsColor);
+        extraKeysBackground.setBackgroundColor(extraKeysColor);
         // •○●
         registerTermuxActivityBroadcastReceiver();
     }
