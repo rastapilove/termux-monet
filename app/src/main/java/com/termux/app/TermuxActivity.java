@@ -447,8 +447,8 @@ private Map<String, String> readColorsFromPropertiesFile(String filePath) {
         // Llama a la función para leer los colores del archivo de propiedades
         Map<String, String> colors = readColorsFromPropertiesFile(filePath);
         // Accede a los valores de cada propiedad
-        int extraKeysColor = colors.get("extra-keys-background");
-        int sessionsColor = colors.get("sessions-background");
+        int extraKeysColor = Color.parseColor(colors.get("extra-keys-background"));
+        int sessionsColor = Color.parseColor(colors.get("sessions-background"));
         sessionsBackground.setBackgroundColor(sessionsColor);
         extraKeysBackground.setBackgroundColor(extraKeysColor);
         // •○●
