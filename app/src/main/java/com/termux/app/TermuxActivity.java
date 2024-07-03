@@ -87,10 +87,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Properties;
-// •○●
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 // •○●
 
 /**
@@ -437,13 +436,11 @@ private Map<String, String> readColorsFromPropertiesFile(String filePath) {
             extraKeysBackground.setAlpha(1.0f);
         }
         // •○● @SimplyTheBest: Change background color in extra keyboard
-        /*String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
-        String colorHex = readColorFromPropertiesFile(filePath);
+        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
+        /*String colorHex = readColorFromPropertiesFile(filePath);
         int color = Color.parseColor(colorHex);
         extraKeysBackground.setBackgroundColor(color);*/
 
-        // Supongamos que el archivo de propiedades se encuentra en "path/to/properties/file.properties"
-        String filePath = "/data/data/com.termux/files/home/.termux/termux.properties";
         // Llama a la función para leer los colores del archivo de propiedades
         Map<String, String> colors = readColorsFromPropertiesFile(filePath);
         // Accede a los valores de cada propiedad
