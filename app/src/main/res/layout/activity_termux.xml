@@ -46,8 +46,7 @@
                 android:scrollbars="vertical"
                 android:importantForAutofill="no"
                 android:autofillHints="password"
-                tools:ignore="UnusedAttribute"
-                android:background="@drawable/border_shape" />
+                tools:ignore="UnusedAttribute" />
 
 
             <RelativeLayout
@@ -161,13 +160,14 @@
             android:layout_width="match_parent"
             android:layout_height="37.5dp"
             android:layout_alignParentBottom="true"
-            android:background="@android:color/transparent"/>
+            android:background="@drawable/border_shape" />
+
     </RelativeLayout>
 
     <View
         android:id="@+id/activity_termux_bottom_space_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@android:color/transparent" />
+        android:background="@drawable/border_shape" />
 
 </com.termux.app.terminal.TermuxActivityRootView>
