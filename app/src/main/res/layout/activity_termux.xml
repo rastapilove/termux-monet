@@ -46,7 +46,9 @@
                 android:scrollbars="vertical"
                 android:importantForAutofill="no"
                 android:autofillHints="password"
-                tools:ignore="UnusedAttribute" />
+                tools:ignore="UnusedAttribute"
+                android:background="@drawable/border_shape" />
+
 
             <RelativeLayout
                 android:layout_width="240dp"
