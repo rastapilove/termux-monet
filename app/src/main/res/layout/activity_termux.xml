@@ -8,6 +8,25 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Puedes agregar más elementos de tu header si es necesario -->
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/header"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/border_shape" />
+    
+    </LinearLayout>
+
+    
     <RelativeLayout
         android:id="@+id/activity_termux_root_relative_layout"
         android:layout_width="match_parent"
@@ -16,23 +35,6 @@
         android:layout_marginHorizontal="0dp"
         android:layout_marginVertical="0dp"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/headerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Puedes agregar más elementos de tu header si es necesario -->
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/header"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop" />
-    
-        </LinearLayout>
 
         
         <androidx.drawerlayout.widget.DrawerLayout
