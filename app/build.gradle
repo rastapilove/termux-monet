@@ -23,8 +23,8 @@ android {
     defaultConfig {
         minSdkVersion project.properties.minSdkVersion.toInteger()
         targetSdkVersion project.properties.targetSdkVersion.toInteger()
-        versionCode 1020
-        versionName "0.119.0-beta.1"
+        versionCode 1020 // Always keep the same versionCode as Termux Upstream to allow users to swap between termux installations.
+        versionName "0.119.0-b1+monet36"
 
         if (appVersionName) versionName = appVersionName
         validateVersionName(versionName)
@@ -33,7 +33,7 @@ android {
 
         manifestPlaceholders = [
             TERMUX_PACKAGE_NAME    : "com.termux",
-            TERMUX_APP_NAME        : "Termux",
+            TERMUX_APP_NAME        : "Termux:Monet",
             TERMUX_API_APP_NAME    : "Termux:API",
             TERMUX_GUI_APP_NAME    : "Termux:GUI",
             TERMUX_BOOT_APP_NAME   : "Termux:Boot",
@@ -123,6 +123,7 @@ dependencies {
     implementation "com.github.KitsunedFox:RealtimeBlurView_v2:1.3.3"
     implementation project(":terminal-view")
     implementation project(":termux-shared")
+    implementation project(":native-entrypoint")
     testImplementation "junit:junit:4.13.2"
     testImplementation "org.robolectric:robolectric:4.12.2"
     coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.0.4"
