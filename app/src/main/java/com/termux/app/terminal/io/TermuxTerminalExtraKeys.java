@@ -80,6 +80,8 @@ public class TermuxTerminalExtraKeys extends TerminalExtraKeys {
                 mTermuxTerminalViewClient.onToggleSoftKeyboardRequest();
         } else if ("DRAWER".equals(key)) {
             DrawerLayout drawerLayout = mTermuxTerminalViewClient.getActivity().getDrawer();
+            //drawerLayout.setScrimColor(ContextCompat.getColor(this, R.color.your_scrim_color));
+            drawerLayout.setScrimColor(0x60ff0000);
             if (drawerLayout.isDrawerOpen(Gravity.RIGHT))
                 drawerLayout.closeDrawer(Gravity.RIGHT);
             else
