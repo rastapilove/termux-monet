@@ -47,6 +47,5 @@
         android:layout_height="wrap_content"
         android:text="JulioCj7"
         android:textColor="@color/menu_accent"
-        app:tint="@color/menu_accent"
         android:textSize="18sp" />
 </LinearLayout>
