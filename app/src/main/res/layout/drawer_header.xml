@@ -1,5 +1,7 @@
 <!-- res/layout/drawer_header.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -12,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="SimplyTheBest"
         android:textColor="@android:color/white"
+        app:tint="@color/menu_accent"
         android:textSize="18sp"
         android:gravity="center" />
 </LinearLayout>
