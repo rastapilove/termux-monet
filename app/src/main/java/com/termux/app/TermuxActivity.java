@@ -257,8 +257,13 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         setActivityTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termux);
+        
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         drawerLayout.setScrimColor(0x00000000); // Establece el color rojo como scrim
+        ImageView headerImage = findViewById(R.id.header_image);
+        // Puedes establecer la imagen programáticamente si es necesario
+        headerImage.setImageResource(R.drawable.juliocj7); // Asegúrate de usar tu imagen
+        
         // Load termux shared preferences
         // This will also fail if TermuxConstants.TERMUX_PACKAGE_NAME does not equal applicationId
         mPreferences = TermuxAppSharedPreferences.build(this, true);
