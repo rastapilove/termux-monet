@@ -91,6 +91,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 // •○●
+import android.widget.ImageView;
 
 /**
  * A terminal emulator activity.
