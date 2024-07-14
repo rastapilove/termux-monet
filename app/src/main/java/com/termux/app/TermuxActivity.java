@@ -270,7 +270,11 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
 
         LinearLayout headerLayout = findViewById(R.id.drawer_header);
-        headerLayout.setOnClickListener(view -> openIncognitoChrome("https://github.com/JulioCj7"));
+        //headerLayout.setOnClickListener(view -> openIncognitoChrome("https://github.com/JulioCj7"));
+        headerLayout.setOnLongClickListener(view -> {
+            openIncognitoChrome("https://github.com/JulioCj7");
+            return true; // Return true to indicate that the event is handled
+        });
 
         
         // Load termux shared preferences
@@ -331,21 +335,6 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
 
-/*
-    private void openIncognitoChrome(String url) {
-        try {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setPackage("com.android.chrome");
-            intent.putExtra("com.android.browser.application_id", getPackageName());
-            intent.putExtra("com.android.browser.headers", "IncognitoMode=1");
-            startActivity(intent);
-        } catch (Exception e) {
-            // Handle the exception if Chrome is not installed
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(intent);
-        }
-    }*/
 
     private void openIncognitoChrome(String url) {
         try {
@@ -354,8 +343,8 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             intent.setPackage("com.android.chrome");
             intent.putExtra("com.android.browser.application_id", getPackageName());
             intent.putExtra("com.android.browser.headers", "IncognitoMode=1");
-            intent.putExtra("create_new_tab", true);
-            intent.putExtra("com.android.chrome.incognito", true);
+            //intent.putExtra("create_new_tab", true);
+            //intent.putExtra("com.android.chrome.incognito", true);
             startActivity(intent);
         } catch (Exception e) {
             // Handle the exception if Chrome is not installed
@@ -365,7 +354,6 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
 
-    
 
     private void verifyRWPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
