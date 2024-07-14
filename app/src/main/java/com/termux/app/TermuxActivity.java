@@ -257,6 +257,10 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         setActivityTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termux);
+        // •○● @SimplyTheBest: (for change background color when drawer is open)
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout.setScrimColor(0x00000000);
+        // •○●
         // Load termux shared preferences
         // This will also fail if TermuxConstants.TERMUX_PACKAGE_NAME does not equal applicationId
         mPreferences = TermuxAppSharedPreferences.build(this, true);
