@@ -92,8 +92,8 @@ import java.util.Map;
 import java.util.Properties;
 // •○●
 
-import android.widget.ImageView;
-import android.widget.TextView;
+//import android.widget.ImageView;
+//import android.widget.TextView;
 
 /**
  * A terminal emulator activity.
@@ -261,11 +261,11 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termux);
         
-        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        drawerLayout.setScrimColor(0x00000000); // Establece el color rojo como scrim
-        ImageView headerImage = findViewById(R.id.header_image);
+        //DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+       // drawerLayout.setScrimColor(0x00000000); // Establece el color rojo como scrim
+        //ImageView headerImage = findViewById(R.id.header_image);
         // Puedes establecer la imagen programáticamente si es necesario
-        headerImage.setImageResource(R.drawable.juliocj7); // Asegúrate de usar tu imagen
+        //headerImage.setImageResource(R.drawable.juliocj7); // Asegúrate de usar tu imagen
 
 
 
@@ -331,6 +331,21 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
 
+/*
+    private void openIncognitoChrome(String url) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setPackage("com.android.chrome");
+            intent.putExtra("com.android.browser.application_id", getPackageName());
+            intent.putExtra("com.android.browser.headers", "IncognitoMode=1");
+            startActivity(intent);
+        } catch (Exception e) {
+            // Handle the exception if Chrome is not installed
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        }
+    }*/
 
     private void openIncognitoChrome(String url) {
         try {
@@ -339,6 +354,8 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             intent.setPackage("com.android.chrome");
             intent.putExtra("com.android.browser.application_id", getPackageName());
             intent.putExtra("com.android.browser.headers", "IncognitoMode=1");
+            intent.putExtra("create_new_tab", true);
+            intent.putExtra("com.android.chrome.incognito", true);
             startActivity(intent);
         } catch (Exception e) {
             // Handle the exception if Chrome is not installed
