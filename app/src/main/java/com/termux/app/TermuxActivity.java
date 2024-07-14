@@ -91,7 +91,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 // •○●
+
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A terminal emulator activity.
@@ -264,6 +266,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         ImageView headerImage = findViewById(R.id.header_image);
         // Puedes establecer la imagen programáticamente si es necesario
         headerImage.setImageResource(R.drawable.juliocj7); // Asegúrate de usar tu imagen
+
+
+
+        LinearLayout headerLayout = findViewById(R.id.drawer_header);
+        headerLayout.setOnClickListener(view -> openIncognitoChrome("https://github.com/JulioCj7"));
+
         
         // Load termux shared preferences
         // This will also fail if TermuxConstants.TERMUX_PACKAGE_NAME does not equal applicationId
@@ -321,6 +329,26 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         verifyRWPermission();
         verifyAndroid11ManageFiles();
     }
+
+
+
+    private void openIncognitoChrome(String url) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setPackage("com.android.chrome");
+            intent.putExtra("com.android.browser.application_id", getPackageName());
+            intent.putExtra("com.android.browser.headers", "IncognitoMode=1");
+            startActivity(intent);
+        } catch (Exception e) {
+            // Handle the exception if Chrome is not installed
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        }
+    }
+
+
+    
 
     private void verifyRWPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
