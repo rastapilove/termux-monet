@@ -261,14 +261,19 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         drawerLayout.setScrimColor(0x00000000);
         // •○●
-
+        // •○● @SimplyTheBest: (action for header drawer)
         LinearLayout headerLayout = findViewById(R.id.drawer_header);
+        // acción al hacer clic en header drawer:
+        headerLayout.setOnClickListener(view -> {
+            mTermuxBackgroundManager.setBackgroundImage();
+        });
         //headerLayout.setOnClickListener(view -> openIncognitoChrome("https://github.com/JulioCj7"));
+        // acción al mantener presionado en heladera drawer:
         headerLayout.setOnLongClickListener(view -> {
             openIncognitoChrome("https://github.com/JulioCj7");
             return true; // Return true to indicate that the event is handled
         });
-        
+        // •○●
         // Load termux shared preferences
         // This will also fail if TermuxConstants.TERMUX_PACKAGE_NAME does not equal applicationId
         mPreferences = TermuxAppSharedPreferences.build(this, true);
@@ -331,8 +336,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         verifyAndroid11ManageFiles();
     }
 
-
-
+    // •○● @SimplyTheBest: (action for header drawer)
     private void openIncognitoChrome(String url) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
@@ -349,7 +353,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             startActivity(intent);
         }
     }
-
+    // •○●
     
     private void verifyRWPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
