@@ -123,21 +123,19 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical">
+        
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/change_background_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="Background"
                             android:textColor="#CFE5FF"
                             app:backgroundTint="#1B242F"
                             app:icon="@drawable/ic_new_session"
-                            app:iconPadding="8dp" />
-
-                        <!--
-                        app:iconGravity="textEnd"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"/>-->
-
+                            app:iconTint="#98CBFF"/>
+                            <!--
+                            app:iconPadding="8dp" />-->
 
                     </LinearLayout>
 
