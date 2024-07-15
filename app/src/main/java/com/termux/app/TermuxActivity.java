@@ -261,8 +261,8 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termux);
         
-        //DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-       // drawerLayout.setScrimColor(0x00000000); // Establece el color rojo como scrim
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout.setScrimColor(0x00000000); // Establece el color rojo como scrim
         //ImageView headerImage = findViewById(R.id.header_image);
         // Puedes establecer la imagen programáticamente si es necesario
         //headerImage.setImageResource(R.drawable.juliocj7); // Asegúrate de usar tu imagen
@@ -270,6 +270,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
 
         LinearLayout headerLayout = findViewById(R.id.drawer_header);
+
+        headerLayout.setOnClickListener(view -> {
+            // Llama a la función setBackgroundImage() cuando se haga clic en el header
+            mTermuxBackgroundManager.setBackgroundImage();
+        });
+        
         //headerLayout.setOnClickListener(view -> openIncognitoChrome("https://github.com/JulioCj7"));
         headerLayout.setOnLongClickListener(view -> {
             openIncognitoChrome("https://github.com/JulioCj7");
