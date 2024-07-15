@@ -122,13 +122,16 @@
                         android:id="@+id/change_background_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Change Background"
-                        android:textColor="@android:color/white"
+                        android:text="Background"
+                        android:textColor="#CFE5FF"
+                        app:backgroundTint="#1B242F"
                         app:icon="@drawable/ic_new_session"
-                        app:iconGravity="textEnd"
                         app:iconPadding="8dp"
+                        app:gravity="center"/>
+                        <!--
+                        app:iconGravity="textEnd"
                         android:layout_marginTop="8dp"
-                        android:gravity="center"/>
+                        android:gravity="center"/>-->
 
                     <LinearLayout
                         style="?android:attr/buttonBarStyle"
