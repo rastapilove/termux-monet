@@ -90,21 +90,22 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!-- Línea divisoria -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#252525"
+        android:layout_marginTop="8dp" />
+    
     <!-- Texto adicional debajo de la imagen y los textos -->
     <TextView
         android:id="@+id/drawer_header_sessions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sesiones:"
-        android:textColor="@android:color/white"
-        android:textSize="10sp"
+        android:text="Sesiones"
+        android:textColor="#353535"
+        android:textSize="11sp"
         android:layout_marginTop="8dp" />
-
-    <!-- Línea divisoria -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
  
 </LinearLayout>
 
