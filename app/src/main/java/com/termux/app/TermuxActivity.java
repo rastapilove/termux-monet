@@ -91,6 +91,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 // •○●
+import com.google.android.material.button.MaterialButton;
 
 //import android.widget.ImageView;
 //import android.widget.TextView;
@@ -280,6 +281,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         headerLayout.setOnLongClickListener(view -> {
             openIncognitoChrome("https://github.com/JulioCj7");
             return true; // Return true to indicate that the event is handled
+        });
+
+        MaterialButton changeBackgroundButton = findViewById(R.id.change_background_button);
+        changeBackgroundButton.setOnClickListener(view -> {
+            // Llama a la función setBackgroundImage() cuando se haga clic en el botón
+            mTermuxBackgroundManager.setBackgroundImage();
         });
 
         
