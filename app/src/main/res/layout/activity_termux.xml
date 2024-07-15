@@ -95,6 +95,27 @@
                         android:divider="@android:color/transparent"
                         android:longClickable="true" />
 
+                    <!-- Botón Material3 con texto e icono -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+        
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/change_background_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Background"
+                            android:textColor="#FFCFE5FF"
+                            app:backgroundTint="#CC1B242F"
+                            app:rippleColor="@color/menu_accent"
+                            app:icon="@drawable/ic_image_search"
+                            app:iconTint="#FF98CBFF" />
+                            
+                    </LinearLayout>
+                    
                     <LinearLayout
                         style="?android:attr/buttonBarStyle"
                         android:layout_width="match_parent"
