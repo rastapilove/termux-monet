@@ -132,8 +132,9 @@
                             android:text="Background"
                             android:textColor="#CFE5FF"
                             app:backgroundTint="#1B242F"
-                            app:icon="@drawable/ic_new_session"
-                            app:iconTint="#98CBFF"/>
+                            app:icon="@drawable/ic_image_search"
+                            app:iconTint="#98CBFF"
+                            app:rippleColor="@color/menu_accent" />
                             <!--
                             app:iconPadding="8dp" />-->
 
