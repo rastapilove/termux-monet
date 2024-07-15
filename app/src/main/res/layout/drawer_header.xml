@@ -38,10 +38,13 @@
             android:textColor="@color/menu_accent"
             android:textSize="12sp" />
     </LinearLayout>
+
+    <!-- Línea divisoria -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    
 </LinearLayout>
 
-<!-- Línea divisoria -->
-<View
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="@android:color/darker_gray" />
