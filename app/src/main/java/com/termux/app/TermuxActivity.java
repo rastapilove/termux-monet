@@ -91,6 +91,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 // •○●
+import com.google.android.material.button.MaterialButton;
 
 /**
  * A terminal emulator activity.
@@ -264,9 +265,9 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         // •○● @SimplyTheBest: (action for header drawer)
         LinearLayout headerLayout = findViewById(R.id.drawer_header);
         // acción al hacer clic en header drawer:
-        headerLayout.setOnClickListener(view -> {
-            mTermuxBackgroundManager.setBackgroundImage();
-        });
+        //headerLayout.setOnClickListener(view -> {
+            //mTermuxBackgroundManager.setBackgroundImage();
+        //});
         //headerLayout.setOnClickListener(view -> openIncognitoChrome("https://github.com/JulioCj7"));
         // acción al mantener presionado en heladera drawer:
         headerLayout.setOnLongClickListener(view -> {
@@ -274,6 +275,13 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             return true; // Return true to indicate that the event is handled
         });
         // •○●
+
+        MaterialButton changeBackgroundButton = findViewById(R.id.change_background_button);
+        changeBackgroundButton.setOnClickListener(view -> {
+            mTermuxBackgroundManager.setBackgroundImage();
+        });
+
+        
         // Load termux shared preferences
         // This will also fail if TermuxConstants.TERMUX_PACKAGE_NAME does not equal applicationId
         mPreferences = TermuxAppSharedPreferences.build(this, true);
