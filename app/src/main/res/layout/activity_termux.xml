@@ -117,7 +117,7 @@
                         android:divider="@android:color/transparent"
                         android:longClickable="true" />
 
-                        <!-- Botón Material3 con texto e icono -->
+                    <!-- Botón Material3 con texto e icono -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/change_background_button"
                         android:layout_width="wrap_content"
@@ -125,8 +125,8 @@
                         android:text="Change Background"
                         android:textColor="@android:color/white"
                         android:icon="@drawable/ic_new_session"
-                        android:iconGravity="textEnd"
-                        android:iconPadding="8dp"
+                        app:iconGravity="textEnd"
+                        app:iconPadding="8dp"
                         android:layout_marginTop="8dp" />
 
                     <LinearLayout
