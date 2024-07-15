@@ -93,9 +93,9 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="#252525"
+        android:background="#CC1B242F"
         android:layout_marginTop="12dp" />
-
+<!--
     <TextView
         android:id="@+id/drawer_header_sessions"
         android:layout_width="wrap_content"
@@ -105,6 +105,6 @@
         android:textSize="10sp"
         android:background="#252525"
         android:layout_marginTop="8dp" />
- 
+ -->
 </LinearLayout>
 
