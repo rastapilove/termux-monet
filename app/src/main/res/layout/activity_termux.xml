@@ -124,10 +124,11 @@
                         android:layout_height="wrap_content"
                         android:text="Change Background"
                         android:textColor="@android:color/white"
-                        android:icon="@drawable/ic_new_session"
+                        app:icon="@drawable/ic_new_session"
                         app:iconGravity="textEnd"
                         app:iconPadding="8dp"
-                        android:layout_marginTop="8dp" />
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"/>
 
                     <LinearLayout
                         style="?android:attr/buttonBarStyle"
