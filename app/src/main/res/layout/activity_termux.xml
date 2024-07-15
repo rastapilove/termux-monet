@@ -130,14 +130,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Background"
-                            android:textColor="#CFE5FF"
-                            app:backgroundTint="#1B242F"
+                            android:textColor="#FFCFE5FF"
+                            app:backgroundTint="#CC1B242F"
+                            app:rippleColor="@color/menu_accent"
                             app:icon="@drawable/ic_image_search"
-                            app:iconTint="#98CBFF"
-                            app:rippleColor="@color/menu_accent" />
-                            <!--
-                            app:iconPadding="8dp" />-->
-
+                            app:iconTint="#FF98CBFF" />
+                            
                     </LinearLayout>
 
                     <LinearLayout
