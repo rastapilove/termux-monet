@@ -289,33 +289,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             mTermuxBackgroundManager.setBackgroundImage();
         });
 
-        
-        // ------
-    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-    setContentView(R.layout.activity_main);
-
-    // Añade el listener de insets aquí
-    View rootView = findViewById(android.R.id.content);
-    rootView.setOnApplyWindowInsetsListener((v, insets) -> {
-        boolean isKeyboardVisible = insets.isVisible(WindowInsetsCompat.Type.ime());
-        int keyboardHeight = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom;
-        // Maneja la visibilidad y altura del teclado
-        return insets;
-    });
-
-    // Añade la callback de animación aquí
-    WindowInsetsAnimationCompat.Callback callback = new WindowInsetsAnimationCompat.Callback(
-            WindowInsetsAnimationCompat.Callback.DISPATCH_MODE_CONTINUE_ON_SUBTREE) {
-        @Override
-        public void onProgress(@NonNull WindowInsetsCompat insets, @NonNull List<WindowInsetsAnimationCompat> runningAnimations) {
-            // Maneja la animación del teclado
-        }
-    };
-
-    ViewCompat.setWindowInsetsAnimationCallback(rootView, callback);
-        // ------
-
-        
+    
         // Load termux shared preferences
         // This will also fail if TermuxConstants.TERMUX_PACKAGE_NAME does not equal applicationId
         mPreferences = TermuxAppSharedPreferences.build(this, true);
