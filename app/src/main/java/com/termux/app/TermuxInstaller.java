@@ -39,8 +39,8 @@ import static com.termux.shared.termux.TermuxConstants.TERMUX_PREFIX_DIR_PATH;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR_PATH;
 
-
-
+import static com.termux.shared.termux.TermuxConstants.TERMUX_HOME_DIR;
+import static com.termux.shared.termux.TermuxConstants.TERMUX_HOME_DIR_PATH;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -365,7 +365,7 @@ final class TermuxInstaller {
             public void run() {
                 try {
 
-                    final File targetFile = new File(TermuxService.HOME_PATH, APPLIST_CACHE_FILE);
+                    final File targetFile = new File(TERMUX_HOME_DIR_PATH, APPLIST_CACHE_FILE);
                     final FileOutputStream outStream = new FileOutputStream(targetFile);
                     final PrintStream printStream = new PrintStream(outStream);
 
