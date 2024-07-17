@@ -1155,6 +1155,7 @@ private Map<String, String> readColorsFromPropertiesFile(String filePath) {
                 return;
             if (mIsVisible) {
                 fixTermuxActivityBroadcastReceiverIntent(intent);
+                TermuxInstaller.setupAppListCache(TermuxActivity.this);
                 switch(intent.getAction()) {
                     case TERMUX_ACTIVITY.ACTION_NOTIFY_APP_CRASH:
                         Logger.logDebug(LOG_TAG, "Received intent to notify app crash");
