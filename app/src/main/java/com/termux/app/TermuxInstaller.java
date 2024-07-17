@@ -378,7 +378,7 @@ final class TermuxInstaller {
                         final Intent  LaunchActivity  = pm.getLaunchIntentForPackage(packageName);
                         final Boolean isSystemApp     = ((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 1) ? true : false;
 
-                        Log.d(LOG_TAG, "[" + LaunchActivity + "] : [" + packageName + "] : [" + isSystemApp + "] : [" + appName + "]");
+                        Logger.logInfo(LOG_TAG, "[" + LaunchActivity + "] : [" + packageName + "] : [" + isSystemApp + "] : [" + appName + "]");
                         if (LaunchActivity == null) {
                             continue;
                         }
@@ -394,7 +394,7 @@ final class TermuxInstaller {
                     outStream.close();
 
                 } catch (Exception e) {
-                    Log.e(LOG_TAG, "Error setting up applist-cache", e);
+                    Logger.logInfo(LOG_TAG, "Error setting up applist-cache", e);
                 }
             }
         }.start();
