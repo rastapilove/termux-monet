@@ -394,7 +394,7 @@ final class TermuxInstaller {
                     outStream.close();
 
                 } catch (Exception e) {
-                    Logger.logInfo(LOG_TAG, "Error setting up applist-cache", e);
+                    //Logger.logInfo(LOG_TAG, "Error setting up applist-cache", e);
                 }
             }
         }.start();
