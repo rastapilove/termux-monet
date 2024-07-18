@@ -39,12 +39,14 @@ import static com.termux.shared.termux.TermuxConstants.TERMUX_PREFIX_DIR_PATH;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR_PATH;
 
+// •○● SimplyTheBest: For termux-app launcher
 import static com.termux.shared.termux.TermuxConstants.TERMUX_HOME_DIR;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_HOME_DIR_PATH;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import java.io.PrintStream;
+// ●○•
 
 /**
  * Install the Termux bootstrap packages if necessary by following the below steps:
@@ -353,11 +355,7 @@ final class TermuxInstaller {
         }.start();
     }
 
-
-
-    //----
-
-
+    // •○● SimplyTheBest: For termux-app launcher
     public static void setupAppListCache(final Context context) {
         final String LOG_TAG = "termux-applist";
         final String APPLIST_CACHE_FILE = ".apps";
@@ -398,13 +396,8 @@ final class TermuxInstaller {
                 }
             }
         }.start();
-    };
-
-    
-    
-    //----
-
-    
+    }
+    // ●○•
 
     private static Error ensureDirectoryExists(File directory) {
         return FileUtils.createDirectoryFile(directory.getAbsolutePath());
