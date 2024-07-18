@@ -363,7 +363,7 @@ final class TermuxInstaller {
             public void run() {
                 try {
 
-                    final File targetFile = new File(TERMUX_HOME_DIR_PATH, APPLIST_CACHE_FILE);
+                    final File targetFile = new File(TERMUX_HOME_DIR, APPLIST_CACHE_FILE);
                     final FileOutputStream outStream = new FileOutputStream(targetFile);
                     final PrintStream printStream = new PrintStream(outStream);
 
@@ -392,7 +392,7 @@ final class TermuxInstaller {
                     outStream.close();
 
                 } catch (Exception e) {
-                    //Logger.logInfo(LOG_TAG, "Error setting up applist-cache", e);
+                    Logger.logError(LOG_TAG, "Error setting up applist-cache", e);
                 }
             }
         }.start();
