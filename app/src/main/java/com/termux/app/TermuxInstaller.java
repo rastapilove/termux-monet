@@ -39,7 +39,7 @@ import static com.termux.shared.termux.TermuxConstants.TERMUX_PREFIX_DIR_PATH;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_STAGING_PREFIX_DIR_PATH;
 
-// •○● SimplyTheBest: For termux-app launcher
+// •○● SimplyTheBest: write all launchable activities into $HOME/.apps
 import static com.termux.shared.termux.TermuxConstants.TERMUX_HOME_DIR;
 import static com.termux.shared.termux.TermuxConstants.TERMUX_HOME_DIR_PATH;
 import android.content.Intent;
@@ -355,7 +355,7 @@ final class TermuxInstaller {
         }.start();
     }
 
-    // •○● SimplyTheBest: For termux-app launcher
+    // •○● SimplyTheBest: write all launchable activities into $HOME/.apps
     public static void setupAppListCache(final Context context) {
         final String LOG_TAG = "termux-applist";
         final String APPLIST_CACHE_FILE = ".apps";
