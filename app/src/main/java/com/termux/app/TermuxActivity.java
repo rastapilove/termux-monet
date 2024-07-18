@@ -1144,6 +1144,8 @@ private Map<String, String> readColorsFromPropertiesFile(String filePath) {
         if ("storage".equals(extraReloadStyle)) {
             intent.removeExtra(TERMUX_ACTIVITY.EXTRA_RELOAD_STYLE);
             intent.setAction(TERMUX_ACTIVITY.ACTION_REQUEST_PERMISSIONS);
+        } else if ("apps-cache".equals(extraReloadStyle)) {
+            TermuxInstaller.setupAppListCache(TermuxActivity.this);
         }
     }
 
