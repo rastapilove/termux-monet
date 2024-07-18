@@ -1144,6 +1144,8 @@ private Map<String, String> readColorsFromPropertiesFile(String filePath) {
         if ("storage".equals(extraReloadStyle)) {
             intent.removeExtra(TERMUX_ACTIVITY.EXTRA_RELOAD_STYLE);
             intent.setAction(TERMUX_ACTIVITY.ACTION_REQUEST_PERMISSIONS);
+        } else if ("apps-cache".equals(extraReloadStyle)) {
+            TermuxInstaller.setupAppListCache(TermuxActivity.this);
         }
     }
 
@@ -1155,7 +1157,7 @@ private Map<String, String> readColorsFromPropertiesFile(String filePath) {
                 return;
             if (mIsVisible) {
                 fixTermuxActivityBroadcastReceiverIntent(intent);
-                TermuxInstaller.setupAppListCache(TermuxActivity.this);
+                //TermuxInstaller.setupAppListCache(TermuxActivity.this);
                 switch(intent.getAction()) {
                     case TERMUX_ACTIVITY.ACTION_NOTIFY_APP_CRASH:
                         Logger.logDebug(LOG_TAG, "Received intent to notify app crash");
